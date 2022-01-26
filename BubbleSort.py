@@ -12,4 +12,3 @@ def countSwaps(a):
     sys.stdout.write("First Element: "+ str(a[0])+"\n")
     sys.stdout.write("Last Element: "+str(a[len(a)-1])+"\n")
 
-countSwaps([1,2,3,4,0])
