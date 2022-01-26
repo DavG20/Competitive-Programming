@@ -1,5 +1,5 @@
 
-
+import sys
 def countSwaps(a):
     # Write your code here
     countSwap=0
@@ -8,8 +8,8 @@ def countSwaps(a):
             if(a[j]>a[j+1]):
                a[j],a[j+1]=a[j+1],a[j]
                countSwap+=1
-    print(f"Array is sorted in "+str(countSwap)+" swaps")
-    print("First Element: "+ str(a[0]))
-    print("Last Element: "+ str(a[len(a)-1]))
+    sys.stdout.write("Array is sorted in "+str(countSwap)+" swaps. \n")
+    sys.stdout.write("First Element: "+ str(a[0])+"\n")
+    sys.stdout.write("Last Element: "+str(a[len(a)-1])+"\n")
 
-            
+countSwaps([1,2,3,4,0])

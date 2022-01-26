@@ -1,3 +1,3 @@
-def FizzBuzz(M,N):
+def Domino(M,N):
     return (M*N)//2
-print(FizzBuzz(3,7))
+print(Domino(3,7))
