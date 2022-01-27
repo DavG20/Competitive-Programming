@@ -9,5 +9,3 @@ class Solution:
                     print(arr)
                     arr[i],arr[j]=arr[j],arr[i]
         return arr
-x=Solution()
-print(x.selectionSort([1,2,5,2,3],5))
