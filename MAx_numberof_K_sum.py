@@ -16,6 +16,4 @@ class Solution(object):
                 
         return count 
         
-c=Solution()
-print(c.maxOperations([1,2,3,4],
-5))
+
