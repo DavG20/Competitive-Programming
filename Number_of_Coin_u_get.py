@@ -1,18 +1,16 @@
+
 class Solution(object):
     def maxCoins(self,piles):
         piles.sort()
-        count=int(len(piles))
+        x=int(len(piles)/3)
         coin=0
-        while count>0:
+        for i in range(x):
             data=piles[-2:]
-            coin+=data[0]
+            data=[piles[i]]+data
+            coin+=data[1]
             piles.pop()
             piles.pop()
-            piles.remove(min(piles))
-            print(data, data[1])
-            print(count)
-            count-=3
-        print(coin)
-        return coin
+            # print(data)
+        return(coin)
 c=Solution()
-c.maxCoins([1,2,3,4,5,6,7,8,9])
+c.maxCoins([2,4,1,2,7,8])
