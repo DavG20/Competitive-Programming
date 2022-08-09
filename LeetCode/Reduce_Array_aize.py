@@ -10,9 +10,14 @@ class Solution(object):
                 store[i]=1
         for i in store:
             size_set+=store[i]
-            count+=1
-            if(size_set>=len(arr)/2):
+            if(size_set==len(arr)/2):
                 break
+            elif(size_set>len(arr)/2):
+                break
+            else:
+                count+=1
+            
+                
         return count
                 
                 
@@ -21,4 +26,4 @@ class Solution(object):
             
         print("this is store",store,"this is the count value",count)
 c=Solution()
-print(c.minSetSize([7,7]))
+print(c.minSetSize([9,77,63,22,92,9,14,54,8,38,18,19,38,68,58,19]))
