@@ -1,7 +1,7 @@
 class Solution(object):
     def reverseParentheses(self,s):
         char_stack=[]
-        # temp=""
+        output=""
         for i in range(len(s)): 
             if s[i]==")":
                 temp=""
@@ -12,6 +12,10 @@ class Solution(object):
                 
             else:
                 char_stack.append(s[i])
-        return(char_stack[0][::-1])
+        for i in char_stack:
+            output=output+i[::-1]
+        return(output)
                     
                 
+c=Solution()
+print(c.reverseParentheses("a(bcdefghijkl(mno)p)q"))
