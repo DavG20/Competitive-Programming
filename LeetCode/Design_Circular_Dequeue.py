@@ -1,6 +1,3 @@
-from turtle import clear
-
-
 class MyCircularDeque(object):
     
     def __init__(self, k):
