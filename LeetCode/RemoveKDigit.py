@@ -5,7 +5,7 @@ class Solution(object):
         for number in num:
             while k and stack and stack[-1]>number:
                 stack.pop()
-                k+=1
+                k-=1
             stack.append(number)
         
         return ''.join(stack[:remain]).lstrip('0') or '0'
