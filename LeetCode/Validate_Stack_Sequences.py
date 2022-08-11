@@ -1,16 +1,11 @@
 class Solution(object):
-    def validateStackSequences(self, pushed, popped):
-        stack = []
-        i = 0 
-        for x in pushed:
-            stack.append(x)
-            while stack and stack[-1] == popped[i]:
+    def validateStackSequences(self,pushed,popped):
+        stack=[]
+        index=0
+        for push_value in pushed:
+            stack.append(push_value)
+            while stack and stack[-1]==popped[index]:
                 stack.pop()
-                i += 1
-
+                index+=1
         return not stack
-c=Solution()
-print(c.validateStackSequences([1,2,3,4,5],[4,5,3,2,1]))
-                    
-                    
-                    
+            
