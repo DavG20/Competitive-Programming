@@ -1,15 +1,15 @@
 class Solution(object):
     def maxArea(self,height):
-        output=0
-        for i in range(len(height)):
-            j=i+1
-            for j in range(len(height)):
-                temp=min(height[i],height[j])
-                if temp*(j-i)<output:
-                    j+=1
-                else:
-                    output=temp*(j-i)
-                    j+=1
-        return(output)
+        left,right=0,len(height)-1
+        result=0
+        while left<right:
+            water=(right-left)*min(height[left],height[right])
+            if water>result:
+                result=water
+            if height[left]<height[right]:
+                left+=1
+            else:
+                right-=1
+        return result
 c=Solution()
-c.maxArea([1,8,6,2,5,4,8,3,7])
+print(c.maxArea([1,8,6,2,5,4,8,3,7]))
