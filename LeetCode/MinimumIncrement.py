@@ -8,4 +8,4 @@ class Solution(object):
                 nums[index]=nums[index-1]+1
         
                    
-        return(temp)
+        return(count)
