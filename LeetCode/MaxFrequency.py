@@ -19,13 +19,14 @@ class Solution(object):
                 res.append(temp)
                             
                 
-            print(res)
+            return(sum(res))
     def sum(arr):
         sum=0
+        
         for i in arr:
             sum+=i
         return sum 
 c=Solution()
-c.maxFrequency([2,2,3,9],5)
+print(c.maxFrequency([1,2,3],5))
                     
                 

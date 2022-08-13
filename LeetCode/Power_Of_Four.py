@@ -4,7 +4,7 @@ class Solution(object):
         if n==1:
             return True
         else:
-            while  n%4==0 and n//4>=1:
+            while n%4==0 and n//4>=1:
                 n=n//4
                 count+=1
         if n==1 and count>=1:
@@ -12,6 +12,6 @@ class Solution(object):
         else:
             return False
 c=Solution()
-print(c.isPowerOfFour(20))        
+print(c.isPowerOfFour(64))        
               
                 
