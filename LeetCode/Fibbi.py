@@ -1,9 +1,5 @@
 class Solution(object):
     def fib(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         prev=0
         last=1
         current=0
