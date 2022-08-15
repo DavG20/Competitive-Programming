@@ -1,21 +1,16 @@
+# class ListNode:
+#     def __init__(self,val=0,next=None):
+#         self.val=val
+#         self.next=None
 class Solution(object):
-    def addTwoNumber(self,l1,l2):
-        num_one=""
-        num_two=""
-        while l1:
-            num_one=str(l1.val)+num_one
-            l1=l1.next
-        while l2:
-            num_two=str(l2.val)+num_two
-            l2=l2.next
-        final_Num=int(num_one)+int(num_two)
-        newHead=None
-        i=0
-        while i<len(final_Num):
-            newNode=ListNode(final_Num[i])
-            newNode.next =newHead
-            newHead=newNode
-            i+=1
-        return newHead
-c=Solution()
-c.addTwoNumber([2,4,3], [5,6,4])
+    def middleNode(self,head):
+        count=0
+        lastNode=head
+        while lastNode:
+            lastNode=lastNode.next
+            count+=1
+        midNode=head 
+        mid_index=int(count//2)
+        for i in range(mid_index):
+            midNode=midNode.next 
+        return midNode
