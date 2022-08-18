@@ -7,7 +7,7 @@ class Solution(object):
     def insertionSortList(self,head):
         newNode=ListNode(0)
         current_node=head 
-        if head==None:
+        if head==None and head.next==None:
             return head 
         while current_node:
             prev_node=newNode
