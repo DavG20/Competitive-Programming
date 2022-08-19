@@ -14,4 +14,3 @@ class Solution(object ):
             result=max(result,r-l+1)
         return result
             
-            
