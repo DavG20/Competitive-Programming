@@ -5,27 +5,28 @@
         
 class Solution(object):
     def reverseKGroup(self,head,k):
-        if head==None:
-            return head
-        if k<2:
-            return head 
-        prev_node,next_node=None,None 
-        current_node=head 
+        count_node=current_node=head 
         size=0
-        count=0
-        count_node=head
+        newNode=newhead=ListNode(-1)
+        if head is None:
+            return head 
         while count_node:
             size+=1
-            count_node=count_node.next
-        while current_node and count<k and size-k>=0:
-            next_node=current_node.next 
-            current_node.next=prev_node 
-            prev_node=current_node 
-            current_node=next_node 
-            count+=1
-        size=size-count 
-        if next_node and size-k>=0:
-            head.next=self.reverseKGroup(next_node, k)
-        else:
-            head.next=current_node
-        return prev_node
+            count_node=count_node.next 
+        ranges=int(size//k)
+        for i in range(ranges):
+            prev_node=None
+            i=0
+            while i<k:
+                next_node=currnet_node.next 
+                current_node.next=prev_node
+                prev_node=current_node
+                current_node=next_node
+                i+=1
+            newhead.next=prev_node
+            for i in range(k):
+                newhead=newhead.next 
+        newhead.next=current_node
+        return newNode.next
+            
+                
