@@ -1,21 +1,19 @@
 class Solution(object):
     def evalRPN(self,tokens):
-        stack=[]
-        tempo=0
-        for value in tokens:
-            if value =="+":
-                temp=int(stack.pop()) 
-                stack.append(int(stack.pop())+temp)
-            elif value=="/" :
-                temp=int(stack.pop()) 
-                stack.append(int(stack.pop())/temp)
-            elif value=="*" :
-                temp= int(stack.pop()) 
-                stack.append(int(stack.pop())*temp)
-            elif value=="-":
-                temp= int(stack.pop())
-                stack.append(int(stack.pop())-temp)
+        stack = []
+        for token in tokens:
+            if token not in ('+', '-', '*', '/'):
+                stack.append(int(token))
             else:
-                stack.append(value)
-       
-        return stack[0]
+                operand1 = stack.pop()
+                operand2 = stack.pop()
+                if token == '+':
+                    stack.append(operand2 + operand1)
+                elif token == '-':
+                    stack.append(operand2 - operand1)
+                elif token == '*':
+                    stack.append(operand2 * operand1)
+                elif token == '/':
+                    stack.append(int(operand2 * 1.0 / operand1))
+
+        return stack[-1]
