@@ -14,4 +14,3 @@ class Solution(object):
             
             words=""
         return " ".join(sorted_sentence)
-        

@@ -7,4 +7,3 @@ class Theatre_Square:
         count= (math.ceil(n/a))*(math.ceil(m/a))
         return count
 
-
