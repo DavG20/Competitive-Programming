@@ -1,0 +1,7 @@
+_=input()
+english=input().split()
+_=input()
+french=input().split()
+english_set=set(english)
+french_set=set(french)
+print( len(english_set.union(french_set)))
