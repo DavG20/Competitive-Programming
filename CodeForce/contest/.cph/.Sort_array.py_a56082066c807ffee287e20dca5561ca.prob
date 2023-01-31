@@ -1,0 +1,1 @@
+{"name":"Local: Sort_array","url":"/home/dawit/Desktop/A2SV/Competitive-Programming/CodeForce/contest/Sort_array.py","tests":[{"id":1674491549542,"input":"3\n3 2 1","output":"yes\n1 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dawit/Desktop/A2SV/Competitive-Programming/CodeForce/contest/Sort_array.py","group":"local","local":true}
