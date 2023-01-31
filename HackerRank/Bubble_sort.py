@@ -1,6 +1,13 @@
-def bubbleSort(arr):
-    for i in range(len(arr)):
-        for j in range(len(arr)-1):
-            if arr[j]>arr[j+1]:
-                arr[j],arr[j+1]=arr[j+1],arr[j]
-    
+def countSwaps(a):
+    # Write your code here
+    count=0
+    for i in range(len(a)):
+        
+        for j in range(i+1,len(a)):
+            
+            if a[i]>a[j]:
+                count+=1
+                a[i] , a[j] = a[j] , a[i]
+    print("Array is sorted in",count,"swaps.")
+    print ("First Element:",a[0])
+    print("Last Element:" ,a[-1])
