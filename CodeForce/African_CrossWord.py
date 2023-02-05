@@ -4,7 +4,7 @@ def Sol():
     
     answer=""
     
-    inbound = lambda x , y : 0 <= x < row and 0 <= y <col
+    inbound = lambda x , y : 0 <= x < row and 0 <= y < col
     
     directions = [(0,1), (1,0),(-1,0),(0,-1)]
     

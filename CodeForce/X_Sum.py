@@ -1,34 +1,46 @@
-# 4
-# 4 4
-# 1 2 2 1
-# 2 4 2 4
-# 2 2 3 1
-# 2 4 2 4
-# 2 1
-# 1
-# 0
-# 3 3
-# 1 1 1
-# 1 1 1
-# 1 1 1
-# 3 3
-# 0 1 1
-# 1 0 1
-# 1 1 0
-def FindMaxSum():
-    num_test_case=int(input())
+def sol():
     
-    for i in range(num_test_case):
-        row_test_case=int(input().split())
-        matrix=[]
-        Max_sum=0
-        for j in range(row_test_case):
-            test_line=list(map(int, input().split()))
-            matrix.append(test_line)
-def GetMaxSum(matrix):pass
+    t = int(input())
     
+    directions = [(1,1),(1,-1),(-1,1),(-1,-1)]
+        
+    inbound = lambda x , y : 0 <= x < n and 0 <= y < m
+    
+    for _ in range(t):
+        
+        n , m = list(map(int, input().split()))
+        
+        
+        grid =  []
+        
+        for  _ in range(n):
             
+            grid.append(list(map(int, input().split())))
+        
+        
+        
+        
+        
+        max_sum = 0
+        for i in range(n):
+            
+            for j in range(m):
+                temp_sum = grid[i][j]
+                
+                             
+                for dx , dy in directions:
+                    curr_x , curr_y = i + dx  , j + dy
+                    
+                    while inbound(curr_x , curr_y):
+                        temp_sum += grid[curr_x][curr_y]
+                        curr_x += dx 
+                        curr_y += dy
+                if temp_sum > max_sum:
+                    max_sum = temp_sum
+        print(max_sum)
+                        
 
+                
+                
         
-        
-        
+sol()
