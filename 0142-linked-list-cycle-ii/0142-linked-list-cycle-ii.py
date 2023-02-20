@@ -20,14 +20,18 @@ class Solution:
             
             if slow == fast:
                 fast = head 
+                break
                 
-                while fast and slow:
-                    
-                    if slow == fast :
-                        return slow 
-                    slow = slow .next 
-                    
-                    fast = fast.next 
+         
+        
+        while fast and fast.next:
+                        
+            if slow == fast:
+                return slow 
+            fast = fast.next 
+
+            slow = slow.next 
+        
                     
                     
         
