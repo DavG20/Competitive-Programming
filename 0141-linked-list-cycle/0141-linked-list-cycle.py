@@ -8,19 +8,38 @@ class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
         
-        visited = set()
+        fast = head 
         
-        curr = head 
+        slow = head 
         
-        while curr:
-            if curr not in visited:
         
-                visited.add(curr)
+        while fast and fast.next:
             
-            else:
-                
+            fast = fast.next.next 
+            
+            slow = slow.next 
+            
+            if fast == slow:
                 return True
-            curr = curr.next
-        
+            
         return False
+        
+        
+        
+        
+#         visited = set()
+        
+#         curr = head 
+        
+#         while curr:
+#             if curr not in visited:
+        
+#                 visited.add(curr)
+            
+#             else:
+                
+#                 return True
+#             curr = curr.next
+        
+#         return False
         
