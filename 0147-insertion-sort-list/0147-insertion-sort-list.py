@@ -8,26 +8,25 @@ class Solution:
         
         curr = head 
         
+        newNode = ListNode(-5001)
         
         while curr:
             
-            temp = head 
+            prev_node = newNode
             
+            while prev_node.next and prev_node.next.val < curr.val:
+                prev_node = prev_node.next
             
-            while temp != curr:
-                
-                #swap if val is not in the right place
-                if temp.val > curr.val:
-                    
-                    temp.val , curr.val = curr.val , temp.val
-                    
-                temp = temp.next 
-            curr = curr.next 
-        return head
-                
-          
-                
+            nextNode = curr.next 
             
+            curr.next = prev_node.next 
             
+            prev_node.next = curr
+            
+            curr = nextNode
+            
+        return newNode.next
+            
+       
         
         
