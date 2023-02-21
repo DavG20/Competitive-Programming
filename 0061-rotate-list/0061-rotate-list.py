@@ -33,6 +33,7 @@ class Solution:
             
         newHead = curr_node.next 
         
+        #cut the cycle
         curr_node.next = None
         
         return newHead
