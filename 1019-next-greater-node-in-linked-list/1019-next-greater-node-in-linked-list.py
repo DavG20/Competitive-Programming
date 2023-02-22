@@ -12,20 +12,23 @@ class Solution:
         curr = head 
         
         stack = []
-        
-        index = 0
+    
         
         while curr:
+            
+            # add the default values
             
             arr.append(0)
             
             
+            
             while stack and curr.val > stack[-1][1]:
+                
                 arr[stack.pop()[0]] = curr.val 
             
-            stack.append((index,curr.val))
+            stack.append((len(arr) - 1,curr.val))
             
-            index += 1
+            
             
             curr = curr.next
         
