@@ -14,6 +14,8 @@ class Solution:
         stack = []
     
         
+        index = 0
+        
         while curr:
             
             # add the default values
@@ -26,10 +28,10 @@ class Solution:
                 
                 arr[stack.pop()[0]] = curr.val 
             
-            stack.append((len(arr) - 1,curr.val))
+            stack.append((index,curr.val))
             
             
-            
+            index += 1 
             curr = curr.next
         
         return(arr)
