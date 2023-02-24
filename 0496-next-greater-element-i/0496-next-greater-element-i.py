@@ -10,16 +10,14 @@ class Solution:
         
         for num in nums2:
             
-            while stack:
+            while stack and stack[-1] < num:
                 
                 if stack[-1] < num:
                     
                     dict_greater [stack[-1]] = num
                     
                     stack.pop()
-                    
-                else:
-                    break
+        
                 
                 
             stack.append(num)
