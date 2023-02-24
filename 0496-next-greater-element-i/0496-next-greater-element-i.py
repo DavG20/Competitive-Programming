@@ -12,11 +12,10 @@ class Solution:
             
             while stack and stack[-1] < num:
                 
-                if stack[-1] < num:
                     
-                    dict_greater [stack[-1]] = num
-                    
-                    stack.pop()
+                dict_greater [stack[-1]] = num
+
+                stack.pop()
         
                 
                 
@@ -27,6 +26,7 @@ class Solution:
             if num in dict_greater:
                 
                 answer.append(dict_greater[num])
+                
             else:
                 
                 answer.append(-1)
