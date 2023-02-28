@@ -1,30 +1,22 @@
 class NumArray:
 
     def __init__(self, nums: List[int]):
+        self.prefSum = [0]
         
-        self.nums = nums
-        self.prefSum = [self.nums[0]]
-        for i in range (1,len(self.nums)):
-            self.prefSum.append(self.nums[i] + self.prefSum[-1]) 
+        for i in range(len(nums)):
+            
+            self.prefSum.append(self.prefSum[-1] + nums[i])
+            
+        print(self.prefSum)
+            
+            
+        
+        
+        
+
     def sumRange(self, left: int, right: int) -> int:
         
-        
-        if left ==0:
-            return self.prefSum[right]
-        else:
-            return self.prefSum[right] - self.prefSum[left-1]
-        
-        
-        
-#         sum_ = 0
-        
-#         for i in range(right - left + 1):
-            
-#             sum_ += self.nums[i + left]
-#         return sum_
-            
-        
-        
+        return self.prefSum[right +1 ] - self.prefSum[left]
         
 
 
