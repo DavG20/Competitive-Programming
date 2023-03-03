@@ -3,7 +3,7 @@ class Solution:
         
         start = 1
         
-        end = x
+        end = x//2
         
         last = x
         
