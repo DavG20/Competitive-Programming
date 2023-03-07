@@ -14,63 +14,52 @@ class Solution:
         
         if root.val < key :
             
-            root.right = self.deleteNode(root.right ,key)
+            root.right = self.deleteNode(root.right  , key)
             
         elif root.val > key :
             
-            root.left =  self.deleteNode( root.left , key)
+            root.left  = self.deleteNode( root.left  , key)
             
         else:
             
-            if  root.left == None:
+            if not root.left :
                 
-                return root.right
+                return  root.right 
             
-            if not root.right :
+            if not root.right  :
                 
-                return root.left
+                return root.left 
             
-            newNode = self.inOrderTra(root.right)
+            #let find inorder successor
+            
+            inorderSucc = self.findInorderSucc(root.right)
             
             
-            # swap the value
+            #swap the value of root and inorder succ 
             
             
-            root.val = newNode.val 
+            root.val = inorderSucc.val 
             
-            root.right =  self.deleteNode(root.right , newNode.val )
             
+            root.right  =  self.deleteNode(root.right , inorderSucc.val)
+        
         return root
+    
+    
+    def findInorderSucc(self , node):
+        
+        curr = node 
+        
+        while curr.left :
+            
+            curr = curr.left 
+            
+        return curr
             
             
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-    
-    def inOrderTra(self, root):
-        
-            curr = root 
             
-            
-            while curr.left :
-                
-                curr = curr.left 
-            return curr
         
         
         
-        
-    
-    
-    
-    
-    
         
         
