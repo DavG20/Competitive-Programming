@@ -11,7 +11,7 @@ class Solution:
                 return 1
         else:
             
-            half = 2 **(n-1)
+            half = 2 **(n-2)
             
             if k <= half :
                 
