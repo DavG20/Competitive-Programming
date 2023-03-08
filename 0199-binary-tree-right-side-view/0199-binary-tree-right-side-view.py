@@ -5,23 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def rightSideView(self, root: Optional[TreeNode] , ans = []) -> List[int]:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         
         
         return self.getRightSideElm(root , [], 0)
-        
-#         if root :
-            
-#             ans.append(root.val)
-            
-#             if root.right is None:
-                
-#                 self.rightSideView(root.left)
-                
-            
-#             self.rightSideView(root.right)
-#         return ans
-    
+
     
     
     def getRightSideElm(self , root , ans , level = 0):
