@@ -6,57 +6,30 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        
-        
-        
-        return self.getLevelOrder(root ,[] )
+        dictt=defaultdict(list)
         
         
         
         
         
         
-    
-    
-    
-    def getLevelOrder ( self , root , ans, level = 0 ):
-        
-       
-        
-        
-        
-        if root: 
+        def help(level,root):
+            if not root:
+                return 
+            dictt[level].append(root.val)
             
-            if len(ans) > level :
-                
-                ans[level].append(root.val)
-
-            else:
-                
-                ans.append([root.val])
-        
-            self.getLevelOrder(root.left , ans ,  level + 1  )
+            help(level+1,root.left)
             
-            self.getLevelOrder(root.right , ans ,level + 1 )
+            help(level + 1 , root.right)
+            
+        help(0 , root)
+        
+        return dictt.values()
+    
+            
+        
             
             
-
-        return ans
         
-        
-        
-        
-        
-        
-    
-       
-        
-        
-    
-        
-#     def getHeight(self , root) :
-        
-#         if root is None:
-#             return -1
-        
-#         return max(self.getHeight(root.left) + 1 , self.getHeight(root.right) + 1)
+            
+            
