@@ -8,27 +8,20 @@ class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         
         
-        return self.getRightSideElm(root , [], 0)
-
+        dictt = defaultdict(list)
+        
+        return self.getRightSideView(root , dictt , 0)
     
     
-    def getRightSideElm(self , root , ans , level = 0):
+    def getRightSideView(self , root , dictt , level = 0 ):
+        
         
         if root :
             
-            if len(ans) == level :
-                
-                ans.append(root.val )
+            dictt[level] = root.val 
             
-            self.getRightSideElm(root.right , ans , level + 1)
+            self.getRightSideView(root.left , dictt , level + 1)
             
-            self .getRightSideElm(root.left , ans , level + 1)
+            self.getRightSideView(root.right , dictt, level + 1)
             
-            
-        return ans
-        
-        
-        
-            
-        
-        
+        return dictt.values()
