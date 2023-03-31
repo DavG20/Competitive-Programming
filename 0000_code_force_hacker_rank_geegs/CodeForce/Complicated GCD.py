@@ -8,7 +8,9 @@ def GCD(a , b):
     return GCD(b , a % b)
 
 if b - a >= 1:
+
     print(1)
+    
 else:
     
     print(GCD(a , b))
