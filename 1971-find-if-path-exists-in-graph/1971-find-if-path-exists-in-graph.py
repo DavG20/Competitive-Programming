@@ -6,23 +6,34 @@ class Solution:
 
         for a, b in edges:
             uf.union(a, b)
-
+            
+        
         return uf.find(source) == uf.find(destination)
     
 class UnionFind:
     def __init__(self, n):
-        self.root = list(range(n))
-        self.rank = [1] * n
+        self.Parent = {i : i for i in range(n)}
+        
+        
     def find(self, x):
-        if self.root[x] != x:
-            self.root[x] = self.find(self.root[x])
-        return self.root[x]
+        
+        if self.Parent[x] != x:
+            self.Parent[x] = self.find(self.Parent[x])
+            
+        return self.Parent[x]
+        
     def union(self, x, y):
-        root_x, root_y = self.find(x), self.find(y)
-        if root_x != root_y:
-            if self.rank[root_x] > self.rank[root_y]:
-                root_x, root_y = root_y, root_x
-            # Modify the root of the smaller group as the root of the
-            # larger group, also increment the size of the larger group.
-            self.rank[root_y] += self.rank[root_x]
-            self.root[root_x] = root_y
+        
+        parent_x = self.find(x)
+        parnet_y = self.find(y)
+        # print(parent_x , parnet_y)
+        self.Parent[parnet_y] = parent_x
+        
+        
+        
+        
+        
+        
+        
+            
+            
