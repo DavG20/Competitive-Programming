@@ -9,18 +9,15 @@ class Solution:
             
             uf.Union(a - 1 , b  - 1, distance)
         
-        ans = float("inf")
         
-        for a , _ , distance in roads:
-            
-            if uf.isConnected(a - 1, n - 1):
-                ans = min(ans , distance)
+        print(uf.minEdge)
+        
             
             
             
             
         
-        return ans 
+        return uf.getAnswer(n - 1) 
     
     
 
@@ -31,6 +28,8 @@ class UnionFind :
         
         self.Parent = [i for i in range(n)]
         self.rank = [0 for _ in range(n)]
+        
+        self.minEdge = [inf for _ in range(n)]
         
         
         
@@ -52,17 +51,25 @@ class UnionFind :
         
         if parentx == parenty:
             
+            self.minEdge[parentx] = min(self.minEdge[parentx] , self.minEdge[parenty],distance)
+            
             return 
         
         if self.rank[parentx] == self.rank[parenty]:
+            
+            # self.minEdge[parentx] = min(self.minEdge[parenty] , distance)
             
             self.rank[parentx] += 1
             
         if self.rank[parentx] > self.rank[parenty]:
             
+            self.minEdge[parentx] = min(self.minEdge[parenty] ,self.minEdge[parentx] , distance)
+            
             self.Parent[parenty] = parentx
             
         if self.rank[parentx] < self.rank[parenty]:
+            
+            self.minEdge[parenty] = min(self.minEdge[parenty] ,self.minEdge[parentx] , distance)
             
             self.Parent[parentx] = parenty
         
@@ -72,7 +79,10 @@ class UnionFind :
     def isConnected(self , x , y):
         
         return self.find(x) == self.find(y)
+    
+    def getAnswer(self , n):
         
+        return self.minEdge[self.find(n)]
         
         
         
